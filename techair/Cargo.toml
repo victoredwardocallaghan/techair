@@ -1,0 +1,11 @@
+[package]
+name = "techair"
+version = "0.1.0"
+authors = ["Edward O'Callaghan <edward@antitrust.cc>"]
+edition = "2018"
+
+[dependencies]
+crc16 = "*"
+byteorder = "*"
+serialport = "*"
+rust-crypto = "^0.2"

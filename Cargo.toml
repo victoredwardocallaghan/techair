@@ -1,0 +1,21 @@
+[package]
+name = "techair-cli"
+version = "0.1.0"
+authors = ["Edward O'Callaghan <edward@antitrust.cc>"]
+edition = "2018"
+
+[lib]
+name = "techair_cli"
+
+[[bin]]
+name = "techair-cli"
+
+[dependencies]
+techair = { path = "techair/" }
+
+[dependencies.clap]
+version = "2.33.0"
+default-features = false
+
+# Cherry-pick the features we would like to use
+features = [ "yaml", "suggestions", "color" ]

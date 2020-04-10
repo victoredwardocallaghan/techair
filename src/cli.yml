@@ -1,0 +1,121 @@
+name: techair
+version: "1.0"
+author: Edward O'Callaghan. <folklore1984@protonmail.com>
+about: Alpinestars TechAir configuration tool
+args:
+    - verbose:
+        short: v
+        multiple: true
+        help: Sets the level of verbosity
+subcommands:
+    - customer-info:
+        short: c
+        long: customer-info
+        help: get customer information
+    - serial:
+        short: s
+        long: serial
+        help: get the serial number
+    - inflation-type:
+        short: i
+        long: inflation-type
+        help: get the inflation type
+    - service-date:
+        short: d
+        long: service-date
+        help: get the service date
+    - operating-modus:
+        short: m
+        long: operating-modus
+        help: get the operating modus (e.g., RACE.VEST.STREET)
+    - sw-version:
+        short: v
+        long: sw-version
+        help: get the software version
+    - supply:
+        about: gets the various supply voltages
+        subcommands:
+            - logic:
+                help: logic voltage
+            - peripheral:
+                help: peripheral voltage
+            - battery:
+                help: battery voltage
+            - squib:
+                help: squib voltage
+            - right-hand:
+                help: right-hand voltage
+            - left-hand:
+                help: left-hand voltage
+            - right-foot:
+                help: right-foot voltage
+            - left-foot:
+                help: left-foot voltage
+            - charging-state:
+                help: charging state
+            - zip-state:
+                help: zip state
+    - sensor:
+        about: gets the various sensor readings
+        subcommands:
+            - revision:
+                about: get sensor revision info
+                args:
+                    - right-hand:
+                        long: right-hand
+                        help: right-hand rev
+                    - left-hand:
+                        long: left-hand
+                        help: left-hand rev
+                    - right-foot:
+                        long: right-foot
+                        help: right-foot rev
+                    - left-foot:
+                        long: left-foot
+                        help: left-foot rev
+            - accelerometer:
+                about: get various accelerometer readings
+                args:
+                    - right-hand:
+                        short: r
+                        long: right-hand
+                        help: right-hand accelerometer
+                    - left-hand:
+                        short: l
+                        long: left-hand
+                        help: left-hand accelerometer
+                    - body:
+                        short: b
+                        long: body
+                        help: body accelerometer
+            - gyroscope:
+                help: gyroscope readings
+    - firmware:
+        about: modifies the firmware on the ACU
+        args:
+            - upgrade:
+                short: u
+                long: upgrade
+                value_name: upgrade-path
+                help: upgrades firmware for a given file
+    - bootloader-version:
+        long: bootloader-ver
+        help: get the bootloader version
+    - bootloader-state:
+        long: bootloader-state
+        help: get the bootloader state
+    - logs:
+        about: obtais crash logs from the ACU
+        subcommands:
+            - no-of-precrash:
+                about: get number of precrash logs
+            - no-of-postcrash:
+                about: get number of postcrash logs
+            - no-of-errors:
+                about: get number of errors logs
+            - bat-count:
+                about: get bat count logs
+            - error-history:
+                about: get error history logs
+            - op-hours:
+                about: get number of operating hours
